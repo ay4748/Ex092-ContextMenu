@@ -21,8 +21,8 @@ public class MainActivityResult extends AppCompatActivity implements AdapterView
     ListView lV;
     TextView tVPos;
     boolean isHeshbonit;
-    int numFirst, numMana;
-    double[] dodge = new double[20];
+    float numFirst, numMana;
+    float[] dodge = new float[20];
     String[] dodgeString = new String[20];
     int position;
 
@@ -39,8 +39,8 @@ public class MainActivityResult extends AppCompatActivity implements AdapterView
         Intent gi = getIntent();
         isHeshbonit = gi.getBooleanExtra("isHeshbonit",false);
 
-        numFirst = gi.getIntExtra("numFirst",0);
-        numMana = gi.getIntExtra("numMana",0);
+        numFirst = gi.getFloatExtra("numFirst",0);
+        numMana = gi.getFloatExtra("numMana",0);
         tVPos = findViewById(R.id.tVPos);
         lV = findViewById(R.id.lV);
 
@@ -66,7 +66,7 @@ public class MainActivityResult extends AppCompatActivity implements AdapterView
     }
 
 
-    private void heshboint(int numFirst,int numMana)
+    private void heshboint(float numFirst,float numMana)
     {
         for(int i = 1; i < 21; i++)
         {
@@ -86,12 +86,12 @@ public class MainActivityResult extends AppCompatActivity implements AdapterView
         }
     }
 
-    private void handasit(int numFirst,int numMana)
+    private void handasit(float numFirst,float numMana)
     {
 
-        for(int i = 1; i < 21; i++){
-            dodge[i-1] = numFirst * Math.pow(numMana, i - 1);
-
+        for(int i = 1; i < 21; i++)
+        {
+            dodge[i-1] = (float)(numFirst * Math.pow(numMana, i - 1));
         }
 
         for(int i = 0; i < 20; i++)

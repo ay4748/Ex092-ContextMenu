@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     boolean isHeshbonit;
     Button btnHeshbon,btnHandasa;
     EditText eTFirst,eTmana;
-    int numFirst,numMana;
+    float numFirst,numMana;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Intent si = new Intent(this,MainActivityResult.class);
-        numFirst = Integer.parseInt(first);
-        numMana = Integer.parseInt(mana);
+        numFirst = Float.parseFloat(first);
+        numMana = Float.parseFloat(mana);
         si.putExtra("isHeshbonit", isHeshbonit);
         si.putExtra("numFirst", numFirst);
         si.putExtra("numMana", numMana);
